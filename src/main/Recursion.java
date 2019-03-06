@@ -1,17 +1,19 @@
 package main;
 
+import java.math.BigInteger;
+
 public class Recursion {
-     static void countDown(int number){
-         if (number<=0){
-             return;
-         }
-        System.out.println(number);
-        --number;
-        countDown(number);
+    static BigInteger factorial(BigInteger number){
+        if (number.equals(BigInteger.ONE) ){
+            return  BigInteger. ONE;
+        }
+        return  number.multiply(factorial(number.subtract(BigInteger.ONE)));
     }
 
-    public static void main(String[] args) {
-       countDown(4);
 
+    public static void main(String[] args) {
+     Recursion recursion= new Recursion();
+
+        System.out.println(factorial(BigInteger.valueOf(15)));
     }
 }
